@@ -12,7 +12,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     on<FetchWeather>((event, emit) async {
       emit(WeatherLoading());
       try {
-        WeatherFactory wf = WeatherFactory(apikey, language: Language.ENGLISH);
+        WeatherFactory wf = WeatherFactory(yourapi, language: Language.ENGLISH);
 
         Weather weather = await wf.currentWeatherByLocation(
           event.position.latitude,
